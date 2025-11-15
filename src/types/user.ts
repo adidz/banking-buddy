@@ -4,7 +4,9 @@ export type UserRole =
   | 'analyst'
   | 'relationship-manager'
   | 'compliance-officer'
-  | 'branch-manager';
+  | 'branch-manager'
+  | 'hr-manager'
+  | 'engineering-manager';
 
 export interface User {
   id: string;
@@ -58,6 +60,20 @@ export const DEMO_USERS: Record<UserRole, User> = {
     role: 'branch-manager',
     department: 'Branch Operations',
   },
+  'hr-manager': {
+    id: '7',
+    name: 'Rachel Anderson',
+    email: 'rachel.a@bankdemo.com',
+    role: 'hr-manager',
+    department: 'Human Resources',
+  },
+  'engineering-manager': {
+    id: '8',
+    name: 'Alex Chen',
+    email: 'alex.c@bankdemo.com',
+    role: 'engineering-manager',
+    department: 'Engineering',
+  },
 };
 
 export const ROLE_LABELS: Record<UserRole, string> = {
@@ -67,4 +83,6 @@ export const ROLE_LABELS: Record<UserRole, string> = {
   'relationship-manager': 'Relationship Manager',
   'compliance-officer': 'Compliance Officer',
   'branch-manager': 'Branch Manager',
+  'hr-manager': 'HR Manager',
+  'engineering-manager': 'Engineering Manager',
 };

@@ -352,6 +352,65 @@ export const mockDepartmentData = [
   { name: 'Branch Ops', productivity: 79, deepWork: 6.2, meetings: 2.4 },
 ];
 
+export const mockHRMetrics = {
+  totalEmployees: 247,
+  newHires: 12,
+  attritionRate: 8.5,
+  avgTenure: 3.2,
+  openPositions: 8,
+  trainingCompletion: 87,
+  employeeSatisfaction: 4.2,
+  performanceReviews: 92,
+};
+
+export const mockEmployeeData = [
+  { id: '1', name: 'Sarah Chen', department: 'Executive', role: 'CXO', tenure: 5.2, performance: 95, satisfaction: 4.8, trainingCompleted: 100 },
+  { id: '2', name: 'Michael Rodriguez', department: 'Operations', role: 'Manager', tenure: 4.1, performance: 88, satisfaction: 4.5, trainingCompleted: 92 },
+  { id: '3', name: 'Priya Sharma', department: 'Operations', role: 'Analyst', tenure: 2.3, performance: 92, satisfaction: 4.3, trainingCompleted: 85 },
+  { id: '4', name: 'James Wilson', department: 'Sales', role: 'RM', tenure: 3.5, performance: 86, satisfaction: 4.1, trainingCompleted: 88 },
+  { id: '5', name: 'Emma Thompson', department: 'Compliance', role: 'Officer', tenure: 4.8, performance: 94, satisfaction: 4.6, trainingCompleted: 98 },
+  { id: '6', name: 'David Kim', department: 'Branch Ops', role: 'Manager', tenure: 6.1, performance: 89, satisfaction: 4.4, trainingCompleted: 95 },
+];
+
+export const mockDepartmentStats = [
+  { department: 'Operations', headcount: 52, avgPerformance: 88, attrition: 6.5, openings: 2 },
+  { department: 'Sales', headcount: 68, avgPerformance: 84, attrition: 12.3, openings: 3 },
+  { department: 'Compliance', headcount: 28, avgPerformance: 92, attrition: 4.2, openings: 1 },
+  { department: 'Branch Ops', headcount: 85, avgPerformance: 86, attrition: 8.1, openings: 2 },
+  { department: 'Engineering', headcount: 14, avgPerformance: 91, attrition: 5.5, openings: 0 },
+];
+
+export const mockEngineeringMetrics = {
+  systemUptime: 99.8,
+  apiResponseTime: 142,
+  deploymentsThisWeek: 12,
+  activeIncidents: 2,
+  bugBacklog: 23,
+  codeReviewsPending: 8,
+  technicalDebtScore: 6.2,
+  testCoverage: 84,
+};
+
+export const mockSystemHealth = [
+  { system: 'Core Banking API', uptime: 99.9, responseTime: 125, requests: 2.4, errors: 0.02 },
+  { system: 'Document Processing', uptime: 99.5, responseTime: 380, requests: 1.2, errors: 0.15 },
+  { system: 'Authentication Service', uptime: 100, responseTime: 45, requests: 5.1, errors: 0 },
+  { system: 'Payment Gateway', uptime: 99.7, responseTime: 210, requests: 0.8, errors: 0.08 },
+  { system: 'Data Analytics', uptime: 98.9, responseTime: 520, requests: 0.3, errors: 0.35 },
+];
+
+export const mockDeployments = [
+  { id: '1', version: 'v2.4.1', service: 'Core Banking API', deployedAt: '2 hours ago', status: 'success', deployedBy: 'Alex Chen' },
+  { id: '2', version: 'v1.8.3', service: 'Document Processing', deployedAt: '5 hours ago', status: 'success', deployedBy: 'Sarah Park' },
+  { id: '3', version: 'v3.1.0', service: 'Mobile App', deployedAt: '1 day ago', status: 'success', deployedBy: 'Mike Johnson' },
+  { id: '4', version: 'v1.5.2', service: 'Analytics Dashboard', deployedAt: '2 days ago', status: 'rollback', deployedBy: 'Alex Chen' },
+];
+
+export const mockIncidents = [
+  { id: '1', title: 'API latency spike in document processing', severity: 'medium', status: 'investigating', reportedAt: '1 hour ago', assignee: 'Sarah Park' },
+  { id: '2', title: 'Database connection timeout', severity: 'high', status: 'in-progress', reportedAt: '3 hours ago', assignee: 'Mike Johnson' },
+];
+
 export const mockDocuments = [
   {
     id: '1',
