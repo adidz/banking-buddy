@@ -181,6 +181,82 @@ export const mockProductivityMetrics = {
   meetingLoad: 2.1,
 };
 
+export const mockCustomerAnalytics = [
+  {
+    id: '1',
+    customerName: 'Acme Corporation',
+    accountNumber: 'ACC-4521',
+    documentsProcessed: 12,
+    loansProcessed: 2,
+    avgProcessingTime: 38,
+    status: 'active',
+    lastActivity: '2 hours ago',
+  },
+  {
+    id: '2',
+    customerName: 'TechStart Inc.',
+    accountNumber: 'ACC-8832',
+    documentsProcessed: 8,
+    loansProcessed: 1,
+    avgProcessingTime: 45,
+    status: 'pending',
+    lastActivity: '5 hours ago',
+  },
+  {
+    id: '3',
+    customerName: 'Global Imports Ltd',
+    accountNumber: 'ACC-2341',
+    documentsProcessed: 15,
+    loansProcessed: 3,
+    avgProcessingTime: 35,
+    status: 'active',
+    lastActivity: '1 hour ago',
+  },
+  {
+    id: '4',
+    customerName: 'Metro Retailers',
+    accountNumber: 'ACC-6754',
+    documentsProcessed: 6,
+    loansProcessed: 0,
+    avgProcessingTime: 52,
+    status: 'review',
+    lastActivity: '3 hours ago',
+  },
+  {
+    id: '5',
+    customerName: 'BuildRight Construction',
+    accountNumber: 'ACC-9021',
+    documentsProcessed: 10,
+    loansProcessed: 2,
+    avgProcessingTime: 40,
+    status: 'active',
+    lastActivity: '30 mins ago',
+  },
+];
+
+export const mockAnalystProductivity = {
+  documentsToday: 18,
+  documentsThisWeek: 94,
+  loansToday: 4,
+  loansThisWeek: 22,
+  avgDocumentTime: 38,
+  avgLoanTime: 125,
+  accuracyRate: 96,
+  byDocumentType: [
+    { type: 'KYC', processed: 32, avgTime: 35 },
+    { type: 'AML', processed: 28, avgTime: 30 },
+    { type: 'Loan', processed: 22, avgTime: 125 },
+    { type: 'Other', processed: 12, avgTime: 45 },
+  ],
+  weeklyTrend: [
+    { day: 'Mon', documents: 15, loans: 3 },
+    { day: 'Tue', documents: 18, loans: 5 },
+    { day: 'Wed', documents: 22, loans: 4 },
+    { day: 'Thu', documents: 19, loans: 6 },
+    { day: 'Fri', documents: 20, loans: 4 },
+  ],
+};
+
 export const mockMetrics = {
   cxo: {
     productivityScore: 82,
@@ -203,6 +279,10 @@ export const mockMetrics = {
     accuracy: 96,
     avgTime: 42,
     deepWorkToday: 4.5,
+    documentsProcessed: 18,
+    loansProcessed: 4,
+    documentsThisWeek: 94,
+    loansThisWeek: 22,
   },
   rm: {
     leadsToday: 12,
