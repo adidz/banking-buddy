@@ -1,9 +1,11 @@
-import { Activity, Zap, Rocket, AlertTriangle, Bug, Code, Gauge, CheckCircle2 } from 'lucide-react';
+import { Activity, Zap, Rocket, AlertTriangle, Bug, Code, Gauge, CheckCircle2, GitCommit, Trophy } from 'lucide-react';
 import MetricCard from '@/components/dashboard/MetricCard';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { mockEngineeringMetrics, mockSystemHealth, mockDeployments, mockIncidents } from '@/data/mockData';
+import { mockEngineeringMetrics, mockSystemHealth, mockDeployments, mockIncidents, mockGitHubCommits, mockBugTracking } from '@/data/mockData';
+import ProjectLeaderboard from '@/components/engineering/ProjectLeaderboard';
+import RewardsGamification from '@/components/engineering/RewardsGamification';
 
 const EngineeringDashboard = () => {
   return (
@@ -76,9 +78,13 @@ const EngineeringDashboard = () => {
       </div>
 
       <Tabs defaultValue="systems" className="space-y-4">
-        <TabsList>
+        <TabsList className="flex flex-wrap h-auto">
           <TabsTrigger value="systems">System Health</TabsTrigger>
+          <TabsTrigger value="commits">GitHub Activity</TabsTrigger>
+          <TabsTrigger value="bugs">Bug Tracking</TabsTrigger>
           <TabsTrigger value="deployments">Deployments</TabsTrigger>
+          <TabsTrigger value="leaderboard">Project Leaderboard</TabsTrigger>
+          <TabsTrigger value="rewards">Rewards & Coins</TabsTrigger>
           <TabsTrigger value="incidents">Incidents</TabsTrigger>
         </TabsList>
 
@@ -120,6 +126,93 @@ const EngineeringDashboard = () => {
           </Card>
         </TabsContent>
 
+        <TabsContent value="commits" className="space-y-4">
+          <Card className="p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold">GitHub Activity (This Month)</h3>
+              <Badge variant="outline">
+                <GitCommit className="w-4 h-4 mr-1" />
+                197 Total Commits
+              </Badge>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">Developer</th>
+                    <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">Commits</th>
+                    <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">Lines Added</th>
+                    <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">Lines Removed</th>
+                    <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">Pull Requests</th>
+                    <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">Merged PRs</th>
+                    <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">Repository</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {mockGitHubCommits.map((dev) => (
+                    <tr key={dev.id} className="border-b hover:bg-muted/50">
+                      <td className="py-3 px-4 font-medium">{dev.developer}</td>
+                      <td className="py-3 px-4">
+                        <Badge variant="default">{dev.commits}</Badge>
+                      </td>
+                      <td className="py-3 px-4 text-success">+{dev.linesAdded}</td>
+                      <td className="py-3 px-4 text-destructive">-{dev.linesRemoved}</td>
+                      <td className="py-3 px-4 text-muted-foreground">{dev.pullRequests}</td>
+                      <td className="py-3 px-4">
+                        <Badge variant="secondary">{dev.mergedPRs}</Badge>
+                      </td>
+                      <td className="py-3 px-4 text-muted-foreground text-sm">{dev.repository}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="bugs" className="space-y-4">
+          <Card className="p-6">
+            <h3 className="text-lg font-semibold mb-4">Bug Tracking</h3>
+            <div className="space-y-3">
+              {mockBugTracking.map((bug) => (
+                <div key={bug.id} className="flex items-start justify-between p-4 border rounded-lg hover:bg-muted/50">
+                  <div className="flex-1 space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Badge variant="outline">{bug.id}</Badge>
+                      <h4 className="font-medium">{bug.title}</h4>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                      <span>Assigned: {bug.assignee}</span>
+                      <span>•</span>
+                      <span>Reported by: {bug.reportedBy}</span>
+                      <span>•</span>
+                      <span>{bug.createdAt}</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-end gap-2 ml-4">
+                    <div className="flex gap-2">
+                      <Badge variant={
+                        bug.severity === 'critical' ? 'destructive' : 
+                        bug.severity === 'high' ? 'destructive' : 
+                        bug.severity === 'medium' ? 'secondary' : 'outline'
+                      }>
+                        {bug.severity}
+                      </Badge>
+                      <Badge variant="outline">{bug.priority}</Badge>
+                    </div>
+                    <Badge variant={
+                      bug.status === 'resolved' ? 'default' : 
+                      bug.status === 'in-progress' ? 'secondary' : 'outline'
+                    }>
+                      {bug.status}
+                    </Badge>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </TabsContent>
+
         <TabsContent value="deployments" className="space-y-4">
           <Card className="p-6">
             <h3 className="text-lg font-semibold mb-4">Recent Deployments</h3>
@@ -142,6 +235,14 @@ const EngineeringDashboard = () => {
               ))}
             </div>
           </Card>
+        </TabsContent>
+
+        <TabsContent value="leaderboard" className="space-y-4">
+          <ProjectLeaderboard />
+        </TabsContent>
+
+        <TabsContent value="rewards" className="space-y-4">
+          <RewardsGamification />
         </TabsContent>
 
         <TabsContent value="incidents" className="space-y-4">
