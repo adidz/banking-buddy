@@ -411,6 +411,88 @@ export const mockIncidents = [
   { id: '2', title: 'Database connection timeout', severity: 'high', status: 'in-progress', reportedAt: '3 hours ago', assignee: 'Mike Johnson' },
 ];
 
+export const mockGitHubCommits = [
+  { id: '1', developer: 'Alex Chen', commits: 47, linesAdded: 2340, linesRemoved: 890, pullRequests: 12, mergedPRs: 11, repository: 'core-banking-api' },
+  { id: '2', developer: 'Sarah Park', commits: 38, linesAdded: 1820, linesRemoved: 650, pullRequests: 9, mergedPRs: 9, repository: 'document-processor' },
+  { id: '3', developer: 'Mike Johnson', commits: 52, linesAdded: 3100, linesRemoved: 1200, pullRequests: 15, mergedPRs: 14, repository: 'mobile-app' },
+  { id: '4', developer: 'Emily Rodriguez', commits: 31, linesAdded: 1560, linesRemoved: 420, pullRequests: 8, mergedPRs: 8, repository: 'analytics-dashboard' },
+  { id: '5', developer: 'James Liu', commits: 29, linesAdded: 1340, linesRemoved: 580, pullRequests: 7, mergedPRs: 6, repository: 'payment-gateway' },
+];
+
+export const mockBugTracking = [
+  { id: 'BUG-401', title: 'Payment gateway timeout on large transactions', severity: 'high', status: 'in-progress', assignee: 'James Liu', reportedBy: 'QA Team', createdAt: '2 days ago', priority: 'P1' },
+  { id: 'BUG-398', title: 'Mobile app crashes on iOS 17', severity: 'critical', status: 'in-progress', assignee: 'Mike Johnson', reportedBy: 'Customer Support', createdAt: '1 day ago', priority: 'P0' },
+  { id: 'BUG-395', title: 'Document OCR misreading dates', severity: 'medium', status: 'open', assignee: 'Sarah Park', reportedBy: 'Priya Sharma', createdAt: '3 days ago', priority: 'P2' },
+  { id: 'BUG-392', title: 'Dashboard charts not updating real-time', severity: 'low', status: 'open', assignee: 'Emily Rodriguez', reportedBy: 'Michael Rodriguez', createdAt: '5 days ago', priority: 'P3' },
+  { id: 'BUG-389', title: 'API rate limiting too aggressive', severity: 'medium', status: 'resolved', assignee: 'Alex Chen', reportedBy: 'David Kim', createdAt: '1 week ago', priority: 'P2' },
+];
+
+export const mockEmployeeProjects = [
+  { 
+    id: '1', 
+    title: 'AI-Powered Document Classification', 
+    developer: 'Sarah Park', 
+    description: 'Automated KYC document classification using machine learning, reducing manual processing time by 60%',
+    votes: 24,
+    category: 'AI/ML',
+    submittedAt: '1 week ago',
+    status: 'live',
+    impact: 'Saved 120 hours/month in manual processing'
+  },
+  { 
+    id: '2', 
+    title: 'Real-time Fraud Detection System', 
+    developer: 'Alex Chen', 
+    description: 'Built real-time transaction monitoring system with ML-based fraud detection patterns',
+    votes: 31,
+    category: 'Security',
+    submittedAt: '2 weeks ago',
+    status: 'live',
+    impact: 'Prevented $450K in fraudulent transactions'
+  },
+  { 
+    id: '3', 
+    title: 'Mobile Biometric Authentication', 
+    developer: 'Mike Johnson', 
+    description: 'Implemented face ID and fingerprint authentication for mobile banking app',
+    votes: 19,
+    category: 'Mobile',
+    submittedAt: '1 week ago',
+    status: 'live',
+    impact: 'Improved login success rate by 35%'
+  },
+  { 
+    id: '4', 
+    title: 'Predictive Customer Analytics Dashboard', 
+    developer: 'Emily Rodriguez', 
+    description: 'Created dashboard to predict customer churn and identify upsell opportunities',
+    votes: 15,
+    category: 'Analytics',
+    submittedAt: '3 days ago',
+    status: 'beta',
+    impact: 'Identified $2M in potential revenue'
+  },
+  { 
+    id: '5', 
+    title: 'Automated Loan Approval Workflow', 
+    developer: 'James Liu', 
+    description: 'Built intelligent workflow engine for SME loan approvals with smart routing',
+    votes: 22,
+    category: 'Automation',
+    submittedAt: '5 days ago',
+    status: 'live',
+    impact: 'Reduced approval time from 5 days to 2 hours'
+  },
+];
+
+export const mockEmployeeRewards = [
+  { id: '1', name: 'Alex Chen', coins: 2450, rank: 1, projects: 8, commitsThisMonth: 52, bugsFixed: 15, avatar: '', badges: ['Top Contributor', 'Bug Squasher', 'Innovation Leader'] },
+  { id: '2', name: 'Mike Johnson', coins: 2180, rank: 2, projects: 6, commitsThisMonth: 47, bugsFixed: 12, avatar: '', badges: ['Mobile Expert', 'Top Contributor'] },
+  { id: '3', name: 'Sarah Park', coins: 2050, rank: 3, projects: 7, commitsThisMonth: 38, bugsFixed: 18, avatar: '', badges: ['AI Champion', 'Bug Squasher'] },
+  { id: '4', name: 'James Liu', coins: 1820, rank: 4, projects: 5, commitsThisMonth: 29, bugsFixed: 9, avatar: '', badges: ['Automation Guru'] },
+  { id: '5', name: 'Emily Rodriguez', coins: 1650, rank: 5, projects: 4, commitsThisMonth: 31, bugsFixed: 7, avatar: '', badges: ['Data Wizard'] },
+];
+
 export const mockDocuments = [
   {
     id: '1',
