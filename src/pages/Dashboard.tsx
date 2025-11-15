@@ -8,6 +8,8 @@ import AnalystDashboard from '@/components/dashboards/AnalystDashboard';
 import RelationshipManagerDashboard from '@/components/dashboards/RelationshipManagerDashboard';
 import ComplianceDashboard from '@/components/dashboards/ComplianceDashboard';
 import BranchManagerDashboard from '@/components/dashboards/BranchManagerDashboard';
+import HRDashboard from '@/components/dashboards/HRDashboard';
+import EngineeringDashboard from '@/components/dashboards/EngineeringDashboard';
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -35,6 +37,10 @@ const Dashboard = () => {
         return <ComplianceDashboard />;
       case 'branch-manager':
         return <BranchManagerDashboard />;
+      case 'hr-manager':
+        return <HRDashboard />;
+      case 'engineering-manager':
+        return <EngineeringDashboard />;
       default:
         return <div>Invalid role</div>;
     }

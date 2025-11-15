@@ -4,7 +4,7 @@ import { useAuth } from '@/lib/auth';
 import { UserRole, ROLE_LABELS } from '@/types/user';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Building2, Users, FileText, TrendingUp, Shield, Store } from 'lucide-react';
+import { Building2, Users, FileText, TrendingUp, Shield, Store, UserCog, Code } from 'lucide-react';
 
 const roleIcons: Record<UserRole, any> = {
   'cxo': Building2,
@@ -13,6 +13,8 @@ const roleIcons: Record<UserRole, any> = {
   'relationship-manager': TrendingUp,
   'compliance-officer': Shield,
   'branch-manager': Store,
+  'hr-manager': UserCog,
+  'engineering-manager': Code,
 };
 
 const Login = () => {
@@ -34,6 +36,8 @@ const Login = () => {
     'relationship-manager',
     'compliance-officer',
     'branch-manager',
+    'hr-manager',
+    'engineering-manager',
   ];
 
   return (
@@ -109,6 +113,8 @@ const getRoleDescription = (role: UserRole): string => {
     'relationship-manager': 'Lead management and sales tracking',
     'compliance-officer': 'Document verification and audit management',
     'branch-manager': 'Branch operations and team coordination',
+    'hr-manager': 'Workforce analytics and employee management',
+    'engineering-manager': 'System health and development metrics',
   };
   return descriptions[role];
 };
