@@ -58,6 +58,129 @@ export const mockLeads = [
   },
 ];
 
+export const mockRMTasks = [
+  {
+    id: '1',
+    title: 'Follow-up call with Acme Corporation',
+    priority: 'high' as const,
+    status: 'pending' as const,
+    dueTime: '11:00 AM',
+    timeSpent: 0,
+    assignee: 'James Wilson',
+    type: 'call',
+  },
+  {
+    id: '2',
+    title: 'Send proposal to TechStart Inc.',
+    priority: 'high' as const,
+    status: 'in-progress' as const,
+    dueTime: '2:00 PM',
+    timeSpent: 25,
+    assignee: 'James Wilson',
+    type: 'document',
+  },
+  {
+    id: '3',
+    title: 'Review loan documentation - Manufacturing Co.',
+    priority: 'medium' as const,
+    status: 'pending' as const,
+    dueTime: '4:00 PM',
+    timeSpent: 0,
+    assignee: 'James Wilson',
+    type: 'review',
+  },
+  {
+    id: '4',
+    title: 'Initial outreach - Global Imports Ltd',
+    priority: 'low' as const,
+    status: 'pending' as const,
+    dueTime: 'Tomorrow',
+    timeSpent: 0,
+    assignee: 'James Wilson',
+    type: 'call',
+  },
+];
+
+export const mockRMDocuments = [
+  {
+    id: '1',
+    name: 'Acme_Corp_Financial_Statements.pdf',
+    type: 'Financial',
+    uploadedAt: '10:30 AM',
+    status: 'processed',
+    client: 'Acme Corporation',
+    dealValue: 250000,
+  },
+  {
+    id: '2',
+    name: 'TechStart_Business_Plan.pdf',
+    type: 'Business Plan',
+    uploadedAt: '9:15 AM',
+    status: 'processing',
+    client: 'TechStart Inc.',
+    dealValue: 120000,
+  },
+  {
+    id: '3',
+    name: 'Global_Imports_KYC.pdf',
+    type: 'KYC',
+    uploadedAt: 'Yesterday',
+    status: 'pending',
+    client: 'Global Imports Ltd',
+    dealValue: 80000,
+  },
+];
+
+export const mockRMTeam = [
+  {
+    id: '1',
+    name: 'Sarah Mitchell',
+    role: 'Senior RM',
+    avatar: '',
+    status: 'active',
+    dealsThisMonth: 8,
+    revenue: 850000,
+    conversionRate: 22,
+    deepWorkHours: 5.8,
+  },
+  {
+    id: '2',
+    name: 'Alex Kumar',
+    role: 'Relationship Manager',
+    avatar: '',
+    status: 'meeting',
+    dealsThisMonth: 5,
+    revenue: 520000,
+    conversionRate: 18,
+    deepWorkHours: 6.2,
+  },
+  {
+    id: '3',
+    name: 'James Wilson',
+    role: 'Relationship Manager',
+    avatar: '',
+    status: 'active',
+    dealsThisMonth: 6,
+    revenue: 450000,
+    conversionRate: 18,
+    deepWorkHours: 5.5,
+  },
+];
+
+export const mockProductivityMetrics = {
+  deepWorkHours: [
+    { day: 'Mon', hours: 5.2 },
+    { day: 'Tue', hours: 6.1 },
+    { day: 'Wed', hours: 5.8 },
+    { day: 'Thu', hours: 5.5 },
+    { day: 'Fri', hours: 4.9 },
+  ],
+  followUpSLA: 87,
+  leadEngagement: 92,
+  avgTaskCompletionTime: 3.2,
+  meetingLoad: 2.1,
+};
+
 export const mockMetrics = {
   cxo: {
     productivityScore: 82,
@@ -87,6 +210,9 @@ export const mockMetrics = {
     followUpsDue: 5,
     conversionRate: 18,
     revenue: 450000,
+    accountsOpened: 6,
+    deepWorkToday: 5.5,
+    meetingHours: 2.1,
   },
   compliance: {
     docsReviewed: 34,
